@@ -20,6 +20,7 @@ class BubbleSort
 	/* Prints the array */
 	void printArray(int arr[])
 	{
+		
 		int n = arr.length;
 		for (int i=0; i<n; ++i)
 			System.out.print(arr[i] + " ");
@@ -32,6 +33,8 @@ class BubbleSort
 		BubbleSort ob = new BubbleSort();
 		int arr[] = {3,9,2,1,5,6,7,8,4};
 		ob.bubbleSort(arr);
+		System.out.println("Sorted array");
+		System.out.println("Sorted array");
 		System.out.println("Sorted array");
 		ob.printArray(arr);
 	}
