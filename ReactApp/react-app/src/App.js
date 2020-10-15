@@ -8,12 +8,12 @@ import Summer_2Beach from "./images/2Summer_2Beach.jpg";
 import Winter from "./images/3Winter.jpg";
 import Sweter from "./images/3Sweter.jpg";
 import Winter_3Sweter from "./images/3Winter_3Sweter.jpg";
-import Rainy_Umbrella_ChaiBhajji from "./images/Rainy_Umbrella_ChaiBhajji.jpg";
+/*import Rainy_Umbrella_ChaiBhajji from "./images/Rainy_Umbrella_ChaiBhajji.jpg";
 import Summer_Beach_ChilloutOnBeach from "./images/Summer_Beach_ChilloutOnBeach.jpg";
-import Winter_Sweter_SnowFall from "./images/Winter_Sweter_SnowFall.jpg";
+import Winter_Sweter_SnowFall from "./images/Winter_Sweter_SnowFall.jpg"; */
 import "./App.css";
 import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
-import ImageCOmponent from "./ImageComponent";
+import {images} from './constants';
 
 class App extends Component {
   constructor(props) {
@@ -60,10 +60,10 @@ class App extends Component {
   };
   render() {
     const { displayModal, prop, enjoymentType, season } = this.state;
-    let finalImageName;
-    if (season === "Rainy") finalImageName = Rainy_Umbrella_ChaiBhajji;
+    let finalImageName = season+"_"+prop+"_"+enjoymentType;
+    /*if (season === "Rainy") finalImageName = Rainy_Umbrella_ChaiBhajji;
     else if (season === "Winter") finalImageName = Winter_Sweter_SnowFall;
-    else if (season === "Summer") finalImageName = Summer_Beach_ChilloutOnBeach;
+    else if (season === "Summer") finalImageName = Summer_Beach_ChilloutOnBeach;*/
     console.log("Final image name is " + finalImageName);
     //alert("Final image name is " + finalImageName);
     return (
@@ -137,7 +137,7 @@ class App extends Component {
             <ModalHeader toggle={this.toggleModal}>You are enjoing</ModalHeader>
             <ModalBody>
               <div align="center">
-                <img src={finalImageName} />
+                <img src={images[finalImageName]} />
               </div>
             </ModalBody>
             <ModalFooter>
